@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+
+</head>
+
+<body>
+
+	<button onclick="fechaComparacion()">
+		<h1>FUNCION COMPARAR</h1>
+	</button>
+
+	<script>
+		function fechaComparacion() {
+			var fechaActual = new Date();
+
+			// Obtener la fecha actual
+			var diaActual = fechaActual.getDate();
+			var mesActual = fechaActual.getMonth() + 1; // Los meses en JavaScript van de 0 a 11, le sumamos mas dos por que por ejemplo marzo seria el 2, pero, al sumarle 1, ahora seria el 3 
+			var anyoActual = fechaActual.getFullYear();
+
+			// Pedir al usuario que ingrese el número del mes
+			var mesInsertado = prompt("Inserte número del mes");
+
+			// Array con el nombre de los meses
+			var nombresMeses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+			var mesNombre = nombresMeses[parseInt(mesInsertado)]; 
+
+			// Crear objeto de fecha con propiedades
+			var fecha = {
+				dia: diaActual,
+				mes: mesNombre,
+				anyo: anyoActual
+			};
+
+			// Comparar si el mes insertado coincide con el mes actual
+			if (mesActual == parseInt(mesInsertado)) {
+				alert("Es hoy");
+			} else {
+				alert("Aun falta");
+			}
+		}
+
+	</script>
+</body>
+
+</html>
